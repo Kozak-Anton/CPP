@@ -2,16 +2,17 @@
 
 int main()
 {
-	const string catalogue = "catalogue.txt";
-	const string sorted_catalogue = "sorted_catalogue.txt";
-	string command;
+	const string catalogue = "catalogue.txt";                   //Input catalogue
+	const string sorted_catalogue = "sorted_catalogue.txt";     //Author sorted catalogue
+	string command;                                             //Command input
 
-	string test1;
-	getline(cin, test1);
-	char test[MAX_INPUT];
-	cin.getline(test, MAX_INPUT);
-	cout <<"\n" << name_search(test1, test)<<"\n";
-	cout << "\n" << int(test[30]) <<"111" << '\0' << "\n";
+	cout << "Command list:\n";
+	cout << "wc - write catalogue file\n";
+	cout << "rc - read catalogue file\n";
+	cout << "ac - append catalogue file\n";
+	cout << "sa - search titles by athor\n";
+	cout << "fa - filter catalogue by author\n";
+	cout << "end - finish programm\n\n";
 
 	while (command!="end") {
 		cout << "Enter command: ";
@@ -27,16 +28,15 @@ int main()
 			append_catalogue(catalogue);
 		}
 		else if (command == "sa") {
-			cout << "sa";
+			search_author(catalogue);
 		}
 		else if (command == "fa") {
-			cout << "fa";
+			filter_author(catalogue, sorted_catalogue);
+			read_catalogue(sorted_catalogue);
 		}
 		else if (command != "end") {
-			cout << "Wrong input";
+			cout << "Wrong input\n";
 		}
-
-
 
 	}
 
