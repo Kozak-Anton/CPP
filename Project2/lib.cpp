@@ -148,6 +148,7 @@ void search_author(string file) {
 			cout << "Title: "<<temp.title<<".   Copies in stock: "<<temp.num<<".\n";
 		}
 	}
+	cout << "\n";
 }
 
 //Write sorted catalogue of books of an author in file
@@ -180,8 +181,6 @@ void filter_author(string input_file, string output_file) {
 void sort_by_author(string name, string file) {
 	Book temp1;
 	Book temp2;
-	string max;
-	string cur;
 
 	fstream catalogue(file, ios::in | ios::out | ios::binary);
 	

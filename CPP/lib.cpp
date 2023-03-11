@@ -72,7 +72,8 @@ void update_output(string input_name, string output_name, string mask) {
 	while (!input_file.eof()) {
 		getline(input_file, line);
 		new_line = edit_line(line, mask);
-		output_file << new_line << " \n";
+		if (!new_line.empty())
+			output_file << new_line << " \n";
 	}
 
 	input_file.close();
@@ -83,6 +84,7 @@ void update_output(string input_name, string output_name, string mask) {
 string edit_line(string line, string mask) {
 	bool check_mask(string, string);
 
+	bool edited = false;
 	int start=0;
 	int	end=0;
 	string word;
@@ -98,10 +100,16 @@ string edit_line(string line, string mask) {
 			line.erase(start, word.length());
 			line.append("(" + word + ") ");
 			end = start;
+
+			edited = true;
 		}
 		start = end;
 	}
-	return line;
+
+	if (edited)
+		return line;
+	else
+		return "";
 }
 
 //Functions returns true is word fits with mask, returns false otherwise
