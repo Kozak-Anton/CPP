@@ -3,51 +3,37 @@
 Варінт 34
 */
 
+#include "mode.h"
 
-#include "lib.h"
-
-int main()
+int main(int argc, char* argv[])
 {
-    string mask;                                    //Mask for word search
-    string command = "";                            //Command input
-    const string input_name = "input_file.txt";     //Input text file name
-    const string output_name = "output_file.txt";   //Editet text file name
+    bool arg_mode, pointer_mode, stream_mode;
 
-    cout << "Mask defines which words are fit for editing. Mask format must include only 1 \"*\".\n";
-    edit_mask(mask);
-
-    cout << "Command list:\n";
-    cout << "wi - write input file\n";
-    cout << "ri - read input file\n";
-    cout << "ai - append input file\n";
-    cout << "ro - read output file\n";
-    cout << "nm - input new mask\n";
-    cout << "end - finish programm\n\n";
-
-    while (command != "end") {
-        cout << "Input command: ";
-        cin >> command;
-        cin.ignore();
-
-        if (command == "wi") {
-            write_input(input_name);
-            update_output(input_name, output_name, mask);
-        }
-        else if (command == "ri")
-            read_file(input_name);
-        else if (command == "ai") {
-            append_input(input_name);
-            update_output(input_name, output_name, mask);
-        }
-        else if (command == "ro")
-            read_file(output_name);
-        else if (command == "nm") {
-            edit_mask(mask);
-            update_output(input_name, output_name, mask);
-        }
-        else if (command != "end")
-            cout << "Incorrect input\n";
+    if (argc != 3) {
+        cout << "Invalid number of arguments\n Usage: program_name [ -mode ] [ FilePointer | FileStream ]\n";
+        return 1;
     }
+
+    arg_mode = !strcmp(argv[1], "-mode");
+    pointer_mode = !strcmp(argv[2], "FilePointer");
+    stream_mode = !strcmp(argv[2], "FileStream");
+
+    if (!arg_mode) {
+        cout << "Invalid arguments\n Usage: program_name [ -mode ] [ FilePointer | FileStream ]\n";
+        return 1;
+    }
+    else if (!pointer_mode && !stream_mode) {
+        cout << "Invalid arguments\n Usage: program_name -mode [ FilePointer | FileStream ]\n";
+        return 1;
+    }
+    else if (pointer_mode) {
+        file_pointer();
+    }
+    else {
+        file_stream();
+    }
+
+    return 0;
 }
 
 

@@ -9,7 +9,6 @@ using namespace std;
 
 const char SEPARATORS[] = " ,.;";                //Separator characters
 
-
 void write_input(string);                        //Function writes input lines to text file
 void read_file(string);                          //Function reads lines from text file
 void append_input(string);                       //Function appends lines to end of text file

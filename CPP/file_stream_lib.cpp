@@ -1,4 +1,4 @@
-#include "lib.h"
+#include "file_stream_lib.h"
 
 //Function writes input lines to text file
 void write_input(string name) {
@@ -28,6 +28,7 @@ void read_file(string name) {
 			break;
 		cout << line << "\n";
 	}
+	cout << "\n";
 	file.close();
 }
 
