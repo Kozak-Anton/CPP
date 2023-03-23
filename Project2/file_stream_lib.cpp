@@ -1,4 +1,4 @@
-#include "lib.h"
+#include "file_stream_lib.h"
 
 //Input catalogue in file
 void write_catalogue(string name) {

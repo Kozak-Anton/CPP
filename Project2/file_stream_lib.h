@@ -7,7 +7,7 @@
 
 using namespace std;
 
-const int MAX_INPUT=200;                       //Max input per string
+const int MAX_INPUT=1000;                      //Max input per string
 static const char* SEPARATOR = ".,;";          //Name separators
 
 struct Book {                                  

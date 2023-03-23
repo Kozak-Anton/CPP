@@ -139,11 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lib.cpp" />
+    <ClCompile Include="file_pointer.cpp" />
+    <ClCompile Include="file_stream.cpp" />
+    <ClCompile Include="file_stream_lib.cpp" />
     <ClCompile Include="project2.cpp" />
+    <ClCompile Include="file_pointer_lib.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib.h" />
+    <ClInclude Include="file_pointer_lib.h" />
+    <ClInclude Include="mode.h" />
+    <ClInclude Include="file_stream_lib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

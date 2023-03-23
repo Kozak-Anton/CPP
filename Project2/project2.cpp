@@ -1,43 +1,33 @@
-#include "lib.h"
+#include "mode.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-	const string catalogue = "catalogue.txt";                   //Input catalogue
-	const string sorted_catalogue = "sorted_catalogue.txt";     //Author sorted catalogue
-	string command;                                             //Command input
+	bool arg_mode, pointer_mode, stream_mode;
 
-	cout << "Command list:\n";
-	cout << "wc - write catalogue file\n";
-	cout << "rc - read catalogue file\n";
-	cout << "ac - append catalogue file\n";
-	cout << "sa - search titles by athor\n";
-	cout << "fa - filter catalogue by author\n";
-	cout << "end - finish programm\n\n";
-
-	while (command!="end") {
-		cout << "Enter command: ";
-		cin >> command;
-
-		if (command == "wc") {
-			write_catalogue(catalogue);
-		}
-		else if (command == "rc") {
-			read_catalogue(catalogue);
-		}
-		else if (command == "ac") {
-			append_catalogue(catalogue);
-		}
-		else if (command == "sa") {
-			search_author(catalogue);
-		}
-		else if (command == "fa") {
-			filter_author(catalogue, sorted_catalogue);
-			read_catalogue(sorted_catalogue);
-		}
-		else if (command != "end") {
-			cout << "Wrong input\n";
-		}
-
+	if (argc != 3) {
+		cout << "Invalid number of arguments\n Usage: program_name [ -mode ] [ FilePointer | FileStream ]\n";
+		return 1;
 	}
+
+	arg_mode = !strcmp(argv[1], "-mode");
+	pointer_mode = !strcmp(argv[2], "FilePointer");
+	stream_mode = !strcmp(argv[2], "FileStream");
+
+	if (!arg_mode) {
+		cout << "Invalid arguments\n Usage: program_name [ -mode ] [ FilePointer | FileStream ]\n";
+		return 1;
+	}
+	else if (!pointer_mode && !stream_mode) {
+		cout << "Invalid arguments\n Usage: program_name -mode [ FilePointer | FileStream ]\n";
+		return 1;
+	}
+	else if (pointer_mode) {
+		file_pointer();
+	}
+	else {
+		file_stream();
+	}
+
+	return 0;
 
 }

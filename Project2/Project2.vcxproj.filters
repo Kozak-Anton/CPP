@@ -15,15 +15,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lib.cpp">
+    <ClCompile Include="file_stream_lib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="project2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="file_pointer_lib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="file_pointer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="file_stream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib.h">
+    <ClInclude Include="file_stream_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="file_pointer_lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
