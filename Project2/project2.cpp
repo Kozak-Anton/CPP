@@ -1,3 +1,8 @@
+﻿/*
+Козак А.М. ІП-23
+Варінт 34
+*/
+
 #include "mode.h"
 
 int main(int argc, char* argv[])

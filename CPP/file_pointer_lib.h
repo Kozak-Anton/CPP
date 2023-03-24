@@ -4,13 +4,13 @@
 #include <string>
 #include <iomanip>
 
-#define MAXLEN 1000
+#define MAXLEN 1000                                //Max line input
 using namespace std;
 
-const char SEPARATORS[] = " ,.;";
+const char SEPARATORS[] = " ,.;";                  //Separator characters
 
-void write_input(char* );
-void read_file(char* );
-void append_input(char* );
-void edit_mask(char*);
-void update_output(char* , char* , char* );
+void write_input(char* );                          //Function writes input lines to text file
+void read_file(char* );                            //Function reads lines from text file
+void append_input(char* );                         //Function appends lines to end of text file
+void edit_mask(char*);                             //Function defines new word mask
+void update_output(char* , char* , char* );        //Function edits text from input_name using mask, writes it in output_name

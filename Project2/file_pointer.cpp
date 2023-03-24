@@ -3,9 +3,9 @@
 
 void file_pointer() {
 
-	char catalogue[MAX_INPUT] = "catalogue.txt";
-	char sorted_catalogue[MAX_INPUT] = "sorted_catalogue.txt";   
-	char command[MAX_INPUT] = " ";
+	char catalogue[MAX_INPUT] = "catalogue.txt";                  //Input catalogue
+	char sorted_catalogue[MAX_INPUT] = "sorted_catalogue.txt";    //Author sorted catalogue
+	char command[MAX_INPUT] = " ";                                //Command input
 
 	cout << "Command list:\n";
 	cout << "wc - write catalogue file\n";

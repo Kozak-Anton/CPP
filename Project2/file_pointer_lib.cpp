@@ -1,5 +1,6 @@
 #include "file_pointer_lib.h"
 
+//Input catalogue in file
 void write_catalogue(char* name) {
 	int books;
 	Book temp;
@@ -31,6 +32,7 @@ void write_catalogue(char* name) {
 	fclose(fp);
 }
 
+//Read catalogue from file
 void read_catalogue(char* name) {
 	int entry = 1;
 	Book temp;
@@ -53,6 +55,7 @@ void read_catalogue(char* name) {
 	fclose(fp);
 }
 
+//Append entries to end of file
 void append_catalogue(char* name) {
 	int books;
 	Book temp;
@@ -84,6 +87,7 @@ void append_catalogue(char* name) {
 	fclose(fp);
 }
 
+//Returns true if name is part of line, othewise returns false 
 bool name_search(char* line, char* name) {
 	char* temp;
 	temp = line;
@@ -101,6 +105,7 @@ bool name_search(char* line, char* name) {
 	return false;
 }
 
+//Read number of copies per title for author 
 void search_author(char* file) {
 	char name[MAX_INPUT];
 	Book temp;
@@ -121,6 +126,7 @@ void search_author(char* file) {
 	fclose(fp);
 }
 
+//Write sorted catalogue of books of an author in file
 void filter_author(char* input_file, char* output_file) {
 	bool name_search(char*, char*);
 	void sort_by_author(char*, char*);
@@ -149,6 +155,7 @@ void filter_author(char* input_file, char* output_file) {
 
 }
 
+//Sorts catalogue file based on bool titles
 void sort_by_author(char* name, char* file) {
 	Book temp1, temp2;
 	FILE* fp;

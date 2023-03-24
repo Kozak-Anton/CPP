@@ -1,5 +1,6 @@
 #include "file_pointer_lib.h"
 
+//Function writes input lines to text file
 void write_input(char* name) {
 	char line[MAXLEN] = "a";
 
@@ -17,6 +18,7 @@ void write_input(char* name) {
 	fclose(fp);
 }
 
+//Function reads lines from text file
 void read_file(char* name) {
 	char line[MAXLEN];
 
@@ -34,6 +36,7 @@ void read_file(char* name) {
 	fclose(fp);
 }
 
+//Function appends lines to end of text file
 void append_input(char* name) {
 	char line[MAXLEN] = "a";
 
@@ -51,6 +54,7 @@ void append_input(char* name) {
 	fclose(fp);
 }
 
+//Function defines new word mask
 void edit_mask(char* mask) {
 	char* mask_test;
 
@@ -67,6 +71,7 @@ void edit_mask(char* mask) {
 	}
 }
 
+//Functions returns true is word fits with mask, returns false otherwise
 bool check_mask(char* word, char* mask) {
 	char compare[MAXLEN];
 	char* temp;
@@ -121,6 +126,7 @@ bool check_mask(char* word, char* mask) {
 	return false;
 }
 
+//Function returns string edited from line using mask
 bool edit_line(char* line, char* mask) {
 	bool check_mask(char*, char*);
 
@@ -166,6 +172,7 @@ bool edit_line(char* line, char* mask) {
 	return edited;
 }
 
+//Function edits text from input_name using mask, writes it in output_name
 void update_output(char* input_name, char* output_name, char* mask) {
 	bool edit_line(char*, char*);
 	char line[MAXLEN];

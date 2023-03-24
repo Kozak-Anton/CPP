@@ -2,10 +2,10 @@
 #include "file_pointer_lib.h"
 
 void file_pointer() {
-    char mask[MAXLEN] = "";
-    char command[MAXLEN] = " ";
-    char input_name[MAXLEN] = "input_file.txt";     
-    char output_name[MAXLEN] = "output_file.txt";   
+    char mask[MAXLEN] = "";                         //Mask for word search
+    char command[MAXLEN] = " ";                     //Command input
+    char input_name[MAXLEN] = "input_file.txt";     //Input text file name
+    char output_name[MAXLEN] = "output_file.txt";   //Editet text file name
 
 
     cout << "Mask defines which words are fit for editing. Mask format must include only 1 \"*\".\n";
