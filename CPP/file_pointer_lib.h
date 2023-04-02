@@ -4,7 +4,7 @@
 #include <string>
 #include <iomanip>
 
-#define MAXLEN 1000                                //Max line input
+#define MAXLEN 1000                                
 using namespace std;
 
 const char SEPARATORS[] = " ,.;";                  //Separator characters

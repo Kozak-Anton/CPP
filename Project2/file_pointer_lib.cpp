@@ -45,7 +45,7 @@ void read_catalogue(char* name) {
 
 		cout << "Entry #" << entry << "\n";
 		cout << "Title: " << temp.title << "\n";
-		cout << "Author: " << temp.author << "\n";
+		cout << "Author(s): " << temp.author << "\n";
 		cout << "Language: " << temp.language << "\n";
 		cout << "Year of publishing: " << temp.year << "\n";
 		cout << "Copies in stock: " << temp.num << "\n\n";

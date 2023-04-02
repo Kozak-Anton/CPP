@@ -44,7 +44,7 @@ void append_catalogue(string name) {
 		cin.ignore();
 		cout << "Title: ";
 		cin.getline(temp.title, MAX_INPUT);
-		cout << "Author: ";
+		cout << "Author(s): ";
 		cin.getline(temp.author, MAX_INPUT);
 		cout << "Language: ";
 		cin.getline(temp.language, MAX_INPUT);

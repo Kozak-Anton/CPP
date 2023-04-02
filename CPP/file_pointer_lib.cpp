@@ -32,7 +32,7 @@ void read_file(char* name) {
 		}
 		fputs(line, stdout);
 	}
-
+	cout << "\n";
 	fclose(fp);
 }
 
