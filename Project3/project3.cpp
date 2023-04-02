@@ -16,7 +16,7 @@ int main()
 		cout << "Input command: ";
 		cin >> command;
 		if (command == "write") {
-			num_entries = write_text(entrie_list);
+			entrie_list = write_text(entrie_list, &num_entries);
 		}
 		else if (command == "read") {
 			read_text(entrie_list, num_entries);

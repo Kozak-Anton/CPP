@@ -1,6 +1,6 @@
 #include "lib.h"
 
-int write_text(Text* list) {
+Text* write_text(Text* list, int* num) {
 	cout << "Empty line stops text input for an entrie\n";
 	cout << "Empty line as first line of entrie stops all text input\n";
 	cin.ignore();
@@ -23,6 +23,7 @@ int write_text(Text* list) {
 			delete[] temp;
 		}
 
+
 		cout << "Entry #" << i + 1 << "\n";
 		list[i].input();
 		if (list[i].get_lines() == 0)
@@ -30,9 +31,10 @@ int write_text(Text* list) {
 		
 		i++;
 	}
+	*num = i;
 	cout << "Input ended\n\n";
 
-	return i;
+	return list;
 }
 
 void read_text(Text* list, int num) {
