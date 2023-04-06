@@ -4,7 +4,7 @@
 using namespace std;
 
 class Text {
-	const char* vowel_list = "aeiouy";
+	const char* vowel_list = "aeiouyAEIOUY";
 	const int max_init = 3;
 	int lines;
 	string* text;
