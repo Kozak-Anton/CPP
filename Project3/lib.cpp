@@ -1,5 +1,6 @@
 #include "lib.h"
 
+//returns array of user input entries of text
 Text* write_text(Text* list, int* num) {
 	cout << "Empty line stops text input for an entrie\n";
 	cout << "Empty line as first line of entrie stops all text input\n";
@@ -37,6 +38,7 @@ Text* write_text(Text* list, int* num) {
 	return list;
 }
 
+//outputs text entrie
 void read_text(Text* list, int num) {
 	for (int i = 0; i < num; i++) {
 		cout << "Entrie #" << i + 1 << "\n";
@@ -44,6 +46,7 @@ void read_text(Text* list, int num) {
 	}
 }
 
+//adds new lines of text to selected entrie
 void append_text(Text* list, int num) {
 	int app_num;
 
@@ -65,6 +68,7 @@ void append_text(Text* list, int num) {
 
 }
 
+//find text entrie with max amaunt of vowels
 void find_vowel(Text* list, int num) {
 	int max_text = 0;
 	int max_vow = 0;

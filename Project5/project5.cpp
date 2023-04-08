@@ -2,8 +2,8 @@
 
 int main() {
 	int bin_num = 0, oct_num = 0;
-	TIntNumber* array2 = nullptr;
-	TIntNumber* array8 = nullptr;
+	TIntNumber* array2 = nullptr;                                               //array of numbers in base 2
+	TIntNumber* array8 = nullptr;                                               //array of numbers in base 8
 
 	cout << "Command list:\n";
 	cout << "write[2|8] - write array in base2/8\n";
@@ -18,10 +18,12 @@ int main() {
 		if (command == "write2") {
 			delete[] array2;
 			array2 = write_array(bin_num, 2);
+			cin.ignore();
 		}
 		else if (command == "write8") {
 			delete[] array8;
 			array8 = write_array(oct_num, 8);
+			cin.ignore();
 		}
 		else if (command == "read2")
 			read_array(array2, bin_num);

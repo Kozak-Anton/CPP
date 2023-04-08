@@ -1,5 +1,5 @@
 #include "lib.h"
-
+//inputs array of numbers in set base
 TIntNumber* write_array(int& num, int base) {
 	TIntNumber* temp = nullptr;
 
@@ -23,25 +23,25 @@ TIntNumber* write_array(int& num, int base) {
 
 	return temp;
 }
-
+//read array of numbers
 void read_array(TIntNumber* array, int num) {
 	for (int i = 0; i < num; i++) {
 		array[i].read_number();
 	}
 }
-
+//increments all numbers in array
 void increment_array(TIntNumber* array, int num) {
 	for (int i = 0; i < num; i++) {
 		array[i]++;
 	}
 }
-
+//decrements all numbers in array
 void decrement_array(TIntNumber* array, int num) {
 	for (int i = 0; i < num; i++) {
 		array[i]--;
 	}
 }
-
+//finds min number amoung 2 arrays
 int find_min(TIntNumber* array1, int num1, TIntNumber* array2, int num2) {
 	int min = 0;
 	if (num1 > 0) {

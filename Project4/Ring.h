@@ -1,9 +1,9 @@
 
 class Ring {
-	float r;
-	float R;
-	float x;
-	float y;
+	float r;                                                                   //inner radius
+	float R;                                                                   //outer radius
+	float x;                                                                   //x axis center
+	float y;                                                                   //y axis center
 
 public:
 	~Ring() {};
@@ -14,9 +14,9 @@ public:
 	float get_y() const;
 	float get_r() const;
 	float get_R() const;
-	float get_width() const;
-	void set_values(float new_r, float new_R, float new_x, float new_y);
-	void operator++();
-	void operator++(int);
-	void operator*=(int);
+	float get_width() const;                                                   //returns width of a ring
+	void set_values(float new_r, float new_R, float new_x, float new_y);       //sets new values for a ring
+	void operator++();                                                         //increments inner radius
+	void operator++(int);                                                      //increments outer radius
+	void operator*=(int);                                                      //miltiplies outer radius by value
 };

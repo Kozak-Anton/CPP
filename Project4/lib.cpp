@@ -1,10 +1,12 @@
 #include "lib.h"
 
+//outputs ring  data
 void read_ring(Ring ring) {
 	cout << "Ring center at (" << ring.get_x() << ", " << ring.get_y() << ") ";
 	cout << "R = " << ring.get_R() << ", " << "r = " << ring.get_r() << "\n";
 }
 
+//reads command from input
 arguments read_command(int& num, int& multiplier) {
 	string line;
 	cout << "Input command: ";
@@ -45,6 +47,7 @@ arguments read_command(int& num, int& multiplier) {
 	return error;
 }
 
+//finds ring with max width
 void find_max_ring(Ring C1, Ring C2, Ring C3) {
 	if (C1.get_width() > C2.get_width() && C1.get_width() > C3.get_width()) 
 		cout << "Max width ring is C1: width = " << C1.get_width()<<"\n";

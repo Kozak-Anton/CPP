@@ -1,5 +1,5 @@
 #include "lib.h"
-
+//sets number values
 void TIntNumber::set_number() {
 	cout << "Input base(up to 36): ";
 	while (true) {
@@ -12,40 +12,45 @@ void TIntNumber::set_number() {
 
 	convert_base_to_10();
 }
-
+//returns number value
 int TIntNumber::get_number() const {
 	return number;
 }
-
+//outputs number in base and in base 10
 void TIntNumber::read_number() const{
 	cout << "Number: " << number_rep <<"(base "<<base<<") = "<< number <<"(base 10)\n";
 }
-
+//increments number value
 void TIntNumber::operator++() {
 	number++;
 	convert_10_to_base();
 }
-
+//increments number value
 void TIntNumber::operator++(int unused) {
 	number++;
 	convert_10_to_base();
 }
-
+//decrements number value
 void TIntNumber::operator--() {
 	number--;
 	convert_10_to_base();
 }
-
+//decrements number value
 void TIntNumber::operator--(int unused) {
 	number--;
 	convert_10_to_base();
 }
-
+//updates number representation in base
 void TIntNumber::convert_10_to_base() {
 	int temp = number;
 	int i = 0;
+	int sign = 1;
 
 	number_rep.clear();
+	if (temp < 0) {
+		sign = -1;
+		temp *= -1;
+	}
 	while (temp > 0) {
 		if (temp % base < 10)
 			number_rep += (char)(temp % base + '0');
@@ -54,8 +59,11 @@ void TIntNumber::convert_10_to_base() {
 		temp /= base;
 	}
 	reverse(number_rep.begin(), number_rep.end());
-}
 
+	if (sign < 0)
+		number_rep = "-" + number_rep;
+}
+//defines number based on representation and base
 void TIntNumber::convert_base_to_10() {
 	bool added = false;
 	char max;

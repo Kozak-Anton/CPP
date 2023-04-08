@@ -29,9 +29,11 @@ float Ring::get_r() const {
 float Ring::get_R() const {
 	return R;
 }
+//returns width of a ring
 float Ring::get_width() const {
 	return R - r;
 }
+//sets new values for a ring
 void Ring::set_values(float new_r, float new_R, float new_x, float new_y) {
 	float temp;
 	if (new_r < 0)
@@ -46,6 +48,7 @@ void Ring::set_values(float new_r, float new_R, float new_x, float new_y) {
 	else
 		r = new_r, R = new_R, x = new_x, y = new_y;
 }
+//increments inner radius
 void Ring::operator++() {
 	float temp;
 	r += 1;
@@ -55,9 +58,11 @@ void Ring::operator++() {
 		R = temp;
 	}
 }
+//increments outer radius
 void Ring::operator++(int unused) {
 	R += 1;
 }
+//miltiplies outer radius by value
 void Ring::operator*=(int multiplier) {
 	float temp;
 	R *= multiplier;

@@ -1,6 +1,6 @@
 #include "Text.h"
 
-
+//inputs lines of text
 void Text::input() {
 	string line, * temp;
 	int i = 0;
@@ -24,6 +24,7 @@ void Text::input() {
 
 }
 
+//appends lines to text
 void Text::append() {
 	string line, * temp;
 	int i = lines;
@@ -47,7 +48,8 @@ void Text::append() {
 	lines = i;
 }
 
-const int Text::count_vowels() {
+//returns vowel count
+int Text::count_vowels() const {
 	int vowels = 0;
 	for (int i = 0; i < lines; i++) {
 		for (int j = 0; j < text[i].length(); j++) {
@@ -58,6 +60,7 @@ const int Text::count_vowels() {
 	return vowels;
 }
 
+//returns text
 string* Text::get_text() {
 	string* temp = new string[lines];
 	for (int i = 0; i < lines; i++) {
@@ -66,20 +69,23 @@ string* Text::get_text() {
 	return temp;
 }
 
+//sets new text
 void Text::set_text(string* new_text, int new_lines) {
 	delete[] text;
 	text = new_text;
 	lines = new_lines;
 }
 
-const void Text::read() {
+//reads lines of text
+void Text::read() const{
 	for (int i = 0; i < lines; i++) {
 		cout << text[i] << "\n";
 	}
 	cout << "\n";
 }
 
-const int Text::get_lines() {
+//returns number of lines
+int Text::get_lines() const{
 	return lines;
 }
 
