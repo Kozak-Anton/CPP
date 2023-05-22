@@ -18,6 +18,15 @@
     <ClInclude Include="lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TIntNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TIntNumber2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TIntNumber8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="project5.cpp">
@@ -27,6 +36,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TIntNumber2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TIntNumber8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

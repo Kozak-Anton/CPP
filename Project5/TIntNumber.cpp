@@ -1,4 +1,7 @@
-#include "lib.h"
+#include "TIntNumber.h"
+
+using namespace std;
+
 //sets number values
 void TIntNumber::set_number() {
 	cout << "Input base(up to 36): ";
@@ -86,6 +89,7 @@ void TIntNumber::convert_base_to_10() {
 	}
 	if (i == 1 && number_rep.length() == 1) {
 		number_rep = "0";
+		number = 0;
 		return;
 	}
 
@@ -101,6 +105,7 @@ void TIntNumber::convert_base_to_10() {
 		}
 		else {
 			number_rep = "0";
+			number = 0;
 			return;
 		}
 	}
